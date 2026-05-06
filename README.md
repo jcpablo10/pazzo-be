@@ -352,7 +352,7 @@ Principales variables en `.env`:
 | `DB_USER` | Usuario de PostgreSQL | `postgres` |
 | `DB_PASSWORD` | Contraseña de PostgreSQL | `postgres` |
 | `DB_HOST` | Host de PostgreSQL | `db` |
-| `DB_PORT` | Puerto de PostgreSQL | `5432` |
+| `DB_PORT` | Puerto de PostgreSQL (dentro del contenedor) | `5432` |
 | `JWT_ACCESS_TOKEN_LIFETIME_MINUTES` | Duración token access | `15` |
 | `JWT_REFRESH_TOKEN_LIFETIME_DAYS` | Duración token refresh | `7` |
 | `CORS_ALLOWED_ORIGINS` | Orígenes CORS permitidos | `http://localhost:3000` |
