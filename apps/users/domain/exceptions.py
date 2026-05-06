@@ -27,3 +27,10 @@ class InvalidCredentialsException(DomainException):
 
     def __init__(self) -> None:
         super().__init__("Invalid credentials provided")
+
+
+class InactiveUserException(DomainException):
+    """Raised when attempting to authenticate an inactive user."""
+
+    def __init__(self) -> None:
+        super().__init__("User account is inactive")

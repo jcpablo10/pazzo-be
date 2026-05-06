@@ -10,6 +10,7 @@ from django.contrib.auth.hashers import make_password
 
 from ..domain.entities import User
 from ..domain.exceptions import (
+    InactiveUserException,
     InvalidCredentialsException,
     UserAlreadyExistsException,
     UserNotFoundException,
@@ -129,6 +130,6 @@ class AuthenticateUserUseCase:
             raise InvalidCredentialsException()
 
         if not user.is_active:
-            raise InvalidCredentialsException()
+            raise InactiveUserException()
 
         return UserOutputDTO.from_entity(user)

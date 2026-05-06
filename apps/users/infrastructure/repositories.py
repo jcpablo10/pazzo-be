@@ -56,6 +56,21 @@ class DjangoUserRepository(UserRepository):
         """Check if a user exists with the given email."""
         return UserModel.objects.filter(email=email).exists()
 
+    def find_django_user_by_email(self, email: str) -> Optional[UserModel]:
+        """
+        Find a Django UserModel by email (for JWT token generation).
+        
+        Args:
+            email: User's email address
+            
+        Returns:
+            UserModel instance or None
+        """
+        try:
+            return UserModel.objects.get(email=email)
+        except UserModel.DoesNotExist:
+            return None
+
     def delete(self, user_id: int) -> bool:
         """Delete a user by ID."""
         try:
